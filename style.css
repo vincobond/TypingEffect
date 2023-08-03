@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   min-height: 100vh;
+   background: #1D1E23;
+}
+h1{
+    color: #fff;
+    font-weight: 600;
+    font: 2rem;
+}
+h1 span{
+    position: relative;
+    color: #BD53ED;
+}
+h1 span::before{
+    content: "";
+    position: absolute;
+    right: -8px;
+    top:20% ;
+    height: 30px;
+    width: 2px;
+    background: red;
+    /* transform: translateY(-45%); */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div{
+    height: 100px;
+    width: 200px;
+    background-color: #ff00a6;
+}
+.repeak_box{
+    width: 50vh;
+    height: 30vh;
+    background-color: aquamarine;
+}
