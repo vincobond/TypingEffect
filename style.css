@@ -26,8 +26,17 @@ h1 span::before{
     top:20% ;
     height: 30px;
     width: 2px;
-    background: red;
-    /* transform: translateY(-45%); */
+    background: #BD53ED;
+    animation: blink 0.7s infinite;
+   
+}
+h1 span.stop::before{
+    animation: none;
+}
+@keyframes blink{
+    50%{
+        opacity: 0;
+    }
 }
 
 
@@ -42,8 +51,7 @@ h1 span::before{
 
 
 
-
-div{
+/* div{
     height: 100px;
     width: 200px;
     background-color: #ff00a6;
@@ -53,3 +61,20 @@ div{
     height: 30vh;
     background-color: aquamarine;
 }
+
+* {
+    scroll-behavior: smooth;
+}
+section {
+    height: 100vh;
+}
+
+#a {
+    background-color: black;
+}
+#b {
+    background-color: red;
+}
+#c {
+    background-color: yellow;
+} */

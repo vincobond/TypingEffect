@@ -12,17 +12,35 @@
 const dynamicText = document.querySelector("h1 span");
 const word =["Love","like Art","the Future","Everything"];
 
-const wordIndex =0;
-const charIndex =0;
-const isDelecting = false;
+var wordIndex =0;
+var charIndex =0;
+var isDelecting = false;
 
 const typeEffect= () =>{
-    const currentWord= word[wordIndex];
-    const currentChar = currentWord.substring(0,charIndex);
+    var currentWord= word[wordIndex];
+    var currentChar = currentWord.substring(0,charIndex);
     dynamicText.textContent=currentChar;
+
+    dynamicText.classList.add("stop");
+
+    // Add the text=========== or Type
     if(!isDelecting && charIndex < currentWord.length){
+        // if the condition is true type the next character
         charIndex++;
         setTimeout(typeEffect, 200);
+    }
+    // Delecte the Text=========
+    else if(isDelecting && charIndex > 0){
+         // if the condition is true remove the next character
+        charIndex--;
+        setTimeout(typeEffect, 100);
+    }
+    else{
+        // word is deleted switch to the next word
+        isDelecting = !isDelecting;
+        dynamicText.classList.remove("stop");
+        wordIndex =!isDelecting ?(wordIndex +1) % word.length: wordIndex;
+        setTimeout(typeEffect, 1200);
     }
 }
 typeEffect();
